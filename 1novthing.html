@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Factortron</title>
+<script>
+    function factorisation()    {
+        var parser = document.getElementById("Number").value;
+        var input = parseInt(parser);
+        var i = 1;
+        var result = 0;
+        for (i = 1; i <= input; i++)
+            {
+            var tester = input%i;
+            if (tester == 0)
+                {
+                result = result + i + "<br>";
+                }
+            }
+            document.getElementById("results").innerHTML = result;
+        
+                                }
+                                
+</script>
+</head>
+<body>
+<input type="number" id="Number">
+<button onclick="factorisation()";>Factorise</button>
+<div id="results">Please enter a number.</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<html>
+<head>
+<script>
+  var leftPos = 800, topPos = 100;
+
+  function init() {
+    animate();
+
+    window.onkeydown = function(e) {
+      alert("You pressed: "+e.keyCode);
+      if (e.keyCode == 37)
+      {
+        leftPos = leftPos - 20;
+      }
+      else if (e.keyCode == 38)
+      {
+        topPos = topPos - 20;
+      }
+      else if (e.keyCode == 39)
+      {
+        leftPos = leftPos + 20;
+      }
+      else if(e.keyCode == 40)
+      {
+        topPos = topPos + 20;
+      }
+    };
+
+    window.onkeyup = function(e) {
+    };
+
+  }
+
+  function animate() {
+    document.getElementById("divVan").style.left = leftPos+"px";
+    document.getElementById("divVan").style.top = topPos+"px";
+    window.setTimeout(animate, 20);
+	}
+</script>
+</head>
+<body onload="init();">
+  <div id='divVan' style='position:absolute; left:800px; top:100px'>
+     <img src='22.jpg'>
+  </div>
+</body>
+</html>
+
+
+
